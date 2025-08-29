@@ -3,10 +3,6 @@ import { ApiGatewayController } from './api-gateway.controller';
 import { ApiGatewayService } from './api-gateway.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ClientsModule, Transport } from '@nestjs/microservices';
-import { ProductController } from 'apps/product/src/product.controller';
-import { SalesController } from 'apps/sales/src/sales.controller';
-import { ProductService } from 'apps/product/src/product.service';
-import { SalesService } from 'apps/sales/src/sales.service';
 
 @Module({
   imports: [
@@ -44,7 +40,7 @@ import { SalesService } from 'apps/sales/src/sales.service';
       },
     ]),
   ],
-  controllers: [ApiGatewayController,ProductController,SalesController],
-  providers: [ApiGatewayService,ProductService,SalesService],
+  controllers: [ApiGatewayController],
+  providers: [ApiGatewayService],
 })
 export class ApiGatewayModule {}
